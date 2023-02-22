@@ -14,6 +14,7 @@ import { Toolbar, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
+
 export default function SideBar() {
   const navigate = useNavigate();
   return (
@@ -55,7 +56,6 @@ export default function SideBar() {
               </ListItemButton>
             </ListItem>
           </List>
-          <Divider />
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
