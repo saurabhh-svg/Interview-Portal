@@ -4,7 +4,6 @@ const moment = require("moment");
 const User = require("../models/user.model");
 const Interview = require("../models/interview.model");
 const isOverlaps = require("../config/isOverlaps");
-const emailSender = require("../config/emailSender");
 
 const addInterview = asyncHandler(async (req, res) => {
   let { startTime, endTime, usersInvited } = req.body;
@@ -97,21 +96,6 @@ const addInterview = asyncHandler(async (req, res) => {
   }
 
   // Send mails
-  usersInvited.forEach((userMail) => {
-    emailSender({
-      email: userMail,
-      subject: `ICP - Interview @ ${moment(startTime).format(
-        "DD-MM-YYYY"
-      )}, ${moment(startTime).format("hh:mm A")} - ${moment(endTime).format(
-        "hh:mm A"
-      )}`,
-      body: `Hi, The Interview is scheduled on ${moment(startTime).format(
-        "DD-MM-YYYY"
-      )}, Time: ${moment(startTime).format("hh:mm A")} - ${moment(
-        endTime
-      ).format("hh:mm A")}`,
-    });
-  });
 
   res.status(201).json({
     message: "Interview added!",
@@ -247,21 +231,6 @@ const updateInterviewDetails = asyncHandler(async (req, res) => {
   );
 
   // Send mails
-  usersInvited.forEach((userMail) => {
-    emailSender({
-      email: userMail,
-      subject: `UPDATED: ICP - Interview @ ${moment(startTime).format(
-        "DD-MM-YYYY"
-      )}, ${moment(startTime).format("hh:mm A")} - ${moment(endTime).format(
-        "hh:mm A"
-      )}`,
-      body: `Hi, The updated Interview is scheduled on ${moment(
-        startTime
-      ).format("DD-MM-YYYY")}, Time: ${moment(startTime).format(
-        "hh:mm A"
-      )} - ${moment(endTime).format("hh:mm A")}`,
-    });
-  });
 
   res.status(200).json({
     message: "Successfully updated.",
