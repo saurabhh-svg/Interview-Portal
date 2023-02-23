@@ -58,11 +58,6 @@ export default function SideBar() {
           </List>
         </Box>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Toolbar />
-        <Typography paragraph>Schedule an Interview</Typography>
-        <Typography paragraph>View Scheduled Interviews</Typography>
-      </Box>
     </Box>
   );
 }

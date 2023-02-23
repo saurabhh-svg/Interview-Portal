@@ -5,6 +5,8 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Sidebar from "../sidebar/Sidebar";
+import "./viewScheduledInterview.css";
 
 const bull = (
   <Box
@@ -41,8 +43,11 @@ const card = (
 
 export const ViewScheduledInterview = () => {
   return (
-    <Box sx={{ minWidth: 275 }}>
-      <Card variant="outlined">{card}</Card>
-    </Box>
+    <div className="view">
+      <Sidebar />
+      <Box sx={{ minWidth: 275 }}>
+        <Card variant="outlined">{card}</Card>
+      </Box>
+    </div>
   );
 };
