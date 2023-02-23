@@ -8,7 +8,7 @@ const interviewRouter = require("./routers/interview.router");
 const userRouter = require("./routers/user.router");
 
 const importData = require("./seeder");
-const constants = require("./config/constant");
+const constants = require("./config/constants");
 
 const app = express();
 

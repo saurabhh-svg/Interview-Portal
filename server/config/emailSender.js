@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const constants = require("./constant");
+const constants = require("./constants");
 
 const emailSender = async ({ email, subject, body }) => {
   const transporter = nodemailer.createTransport({

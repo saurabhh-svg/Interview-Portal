@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const constants = require("./constant");
+const constants = require("./constants");
 
 const initializeDBConnection = () => {
   mongoose
