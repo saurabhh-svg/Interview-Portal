@@ -1,14 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import axios from "axios";
+import "./index.css";
 import App from "./App";
-import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/Navbar";
+import { constants } from "./util/constant";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <Navbar />
-    <App />
-    <Footer />
-  </React.StrictMode>
+const queryClient = new QueryClient();
+
+axios.defaults.baseURL = constants.URL;
+
+ReactDOM.render(
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <App />
+      <ReactQueryDevtools />
+    </QueryClientProvider>
+  </BrowserRouter>,
+  document.getElementById("root")
 );

@@ -1,19 +1,24 @@
-import React from "react";
-import SideBar from "./components/sidebar/Sidebar.jsx";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ScheduleInterview from "./components/scheduleInterview/ScheduleInterview.jsx";
-import { ViewScheduledInterview } from "./components/viewScheduledInterview/ViewScheduledInterview.jsx";
+import { Routes, Route, Link } from "react-router-dom";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import Home from "./pages/Home";
+import EditInterview from "./pages/EditInterview";
+import ScheduleInterview from "./pages/ScheduleInterview";
+import UpcomingInterviews from "./pages/UpcomingInterviews";
 
-const App = () => {
+function App() {
   return (
-    <Router>
+    <>
+      <Header />
       <Routes>
-        <Route path="/" element={<SideBar />} />
+        <Route path="/" element={<Home />} />
         <Route path="/schedule" element={<ScheduleInterview />} />
-        <Route path="/view" element={<ViewScheduledInterview />} />
+        <Route path="/upcoming" element={<UpcomingInterviews />} />
+        <Route path="/edit/:interviewId" element={<EditInterview />} />
       </Routes>
-    </Router>
+      <Footer />
+    </>
   );
-};
+}
 
 export default App;
