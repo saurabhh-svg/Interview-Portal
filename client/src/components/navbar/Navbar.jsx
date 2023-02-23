@@ -10,7 +10,7 @@ import {
 import Logo from "../../assets/logo.jpeg";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import "./navbar.css";
-// import { useNavigate } from "react-router-dom";
+ import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   // const navigate = useNavigate();
@@ -29,7 +29,7 @@ export default function Navbar() {
         <Stack direction="row" spacing={2}>
           <Button
             color="inherit"
-            //</Stack> onClick={() => navigate("/schedule")}
+            //onClick={() => navigate("/schedule")}
           >
             Home
           </Button>
