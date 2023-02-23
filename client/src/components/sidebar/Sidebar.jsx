@@ -47,12 +47,16 @@ export default function SideBar() {
                 <ListItemText primary={"Schedule an Interview"} />
               </ListItemButton>
             </ListItem>
-            <ListItem key={1} disablePadding onClick={() => navigate("/view")}>
+            <ListItem
+              key={1}
+              disablePadding
+              onClick={() => navigate("/upcoming")}
+            >
               <ListItemButton>
                 <ListItemIcon>
                   <AutoStoriesIcon />
                 </ListItemIcon>
-                <ListItemText primary={"View Scheduled Interview"} />
+                <ListItemText primary={"View Upcoming Interview"} />
               </ListItemButton>
             </ListItem>
           </List>

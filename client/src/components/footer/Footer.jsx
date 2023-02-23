@@ -1,24 +1,27 @@
 import React from "react";
 import "./footer.css";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faTwitter,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <footer>
       <a href="https://www.linkedin.com/in/saurabh-singh-82287a201/">
-        <LinkedInIcon />
+        <FontAwesomeIcon icon={faLinkedin} />
       </a>
       <a href="https://github.com/saurabhh-svg">
-        <GitHubIcon />
+        <FontAwesomeIcon icon={faGithub} />
       </a>
       <a href="https://twitter.com/kyayrrsaurabh">
-        <TwitterIcon />
+        <FontAwesomeIcon icon={faTwitter} />
       </a>
       <a href="https://www.instagram.com/saurabhh.__/">
-        <InstagramIcon />
+        <FontAwesomeIcon icon={faInstagram} />
       </a>
       <div>&copy; Saurabh Singh All rights reserved.</div>
     </footer>
