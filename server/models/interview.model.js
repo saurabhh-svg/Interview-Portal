@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const { Schema } = mongoose;
 
 const interviewSchema = new Schema(
@@ -27,4 +28,3 @@ const interviewSchema = new Schema(
 const Interview = mongoose.model("Interview", interviewSchema);
 
 module.exports = Interview;
-

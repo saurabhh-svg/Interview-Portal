@@ -9,7 +9,7 @@ const importData = async () => {
 
     await User.insertMany(users);
 
-    console.log("Date Imported!");
+    console.log("Data Imported!");
   } catch (error) {
     console.error(error);
   }

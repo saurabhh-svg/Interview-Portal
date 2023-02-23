@@ -1,23 +1,23 @@
 const mongoose = require("mongoose");
 const { isEmail } = require("validator");
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const UserSchema = new Schema(
+const userSchema = new Schema(
   {
     name: {
       type: String,
-      required: [true, "Please Enter Name"],
+      required: [true, "name is required."],
     },
     email: {
       type: String,
-      required: [true, "Please Enter Email"],
-      lowercase: true,
-      unique: [true, "Email is already taken."],
-      validate: [isEmail, "Invalid Email"],
       trim: true,
+      lowercase: true,
+      required: [true, "email is requried."],
+      unique: [true, "email is already taken."],
+      validate: [isEmail, "invalid email"],
     },
-    interviewScheduled: [
+    interviewsScheduled: [
       {
         type: Schema.Types.ObjectId,
         ref: "Interview",
@@ -27,5 +27,6 @@ const UserSchema = new Schema(
   { timestamps: true }
 );
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", userSchema);
+
 module.exports = User;

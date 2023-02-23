@@ -3,12 +3,11 @@ const express = require("express");
 const compression = require("compression");
 const cors = require("cors");
 const initializeDBConnection = require("./config/db.connect");
-const errorHandlerRoute = require("./middlewares/errorHandler");
 const interviewRouter = require("./routers/interview.router");
 const userRouter = require("./routers/user.router");
 
 const importData = require("./seeder");
-const constants = require("./config/constants");
+const constants = require("./config/constant");
 
 const app = express();
 
@@ -46,11 +45,6 @@ if (constants.general.NODE_ENV === "production") {
     res.send("Hey, Welcome to the backend!");
   });
 }
-
-// Not found route Middleware
-app.use(errorHandlerRoute.notFound);
-// Error Handler Route Middleware
-app.use(errorHandlerRoute.errorHandler);
 
 app.listen(constants.general.PORT, () => {
   console.log("Backend Server is running.");

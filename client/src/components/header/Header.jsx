@@ -24,22 +24,17 @@ export default function Header() {
             <img className="logo" src={Logo} alt="logo" />
           </IconButton>
         </Link>
+
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Umbrella Academy
         </Typography>
-        <Stack direction="row" className="align-items-baseline" spacing={2}>
-          <Link to="/">
-            {" "}
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Home
-            </Typography>
-          </Link>
-          <Button color="inherit">
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <AccountCircleIcon fontSize="large" />
-            </Typography>
-          </Button>
-        </Stack>
+
+        <Link to="/">Home</Link>
+        <Button color="inherit">
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <AccountCircleIcon fontSize="large" />
+          </Typography>
+        </Button>
       </Toolbar>
     </AppBar>
   );
